@@ -9,7 +9,7 @@ let myLib = [];
 
 
 class Book {
-    constructor(title, author) {
+    constructor(title = '', author = '') {
         this.title = title;
         this.author = author;
     }
@@ -20,46 +20,46 @@ class Book {
         };
 
         myLib.unshift(savedBook);
-        displayBook();
+        this.displayBook();
+    }
+
+    addBook (e){
+        e.preventDefault();
+        let bookTitle = inTitle.value;
+        let bookAuthor = inAuthor.value;
+        
+        if(inAuthor.value !== '' && inTitle.value !== '') { 
+            bookContainer.innerHTML = '';
+            let insertBook = new Book (bookTitle,bookAuthor);
+            insertBook.saveBook();
+            inAuthor.value = '';
+            inTitle.value = '';
+        } 
+    }
+    
+    displayBook () { 
+        bookContainer.innerHTML = '';
+        myLib.forEach((s) => {
+        bookContainer.innerHTML += ` 
+                <div class="book-item">
+                    <p class="title"> "${s.title}" by ${s.author}</p> 
+                    <button class="remove">Remove</button>
+                </div>
+        `; 
+    }); 
+    
+        let deleteButton = bookContainer.querySelectorAll('.remove');  
+        deleteButton.forEach((key,index) => key.addEventListener('click', ()=> {
+            this.deleteFunc(index);
+        }))   
+    }
+    
+    deleteFunc (index) {
+        myLib.splice(index,1);
+        this.displayBook();
     }
 }
 
-    
-function addBook (e){
-    e.preventDefault();
-    let bookTitle = inTitle.value;
-    let bookAuthor = inAuthor.value;
-    
-    if(inAuthor.value !== '' && inTitle.value !== '') { 
-        bookContainer.innerHTML = '';
-        let insertBook = new Book (bookTitle,bookAuthor);
-        insertBook.saveBook();
-        inAuthor.value = '';
-        inTitle.value = '';
-    } 
-}
-
-function displayBook (){ 
-    bookContainer.innerHTML = '';
-    myLib.forEach((s) => {
-    bookContainer.innerHTML += ` 
-            <div class="book-item">
-                <p class="title"> "${s.title}" by ${s.author}</p> 
-                <button class="remove">Remove</button>
-            </div>
-    `; 
-}); 
-
-let deleteButton = bookContainer.querySelectorAll('.remove');  
-deleteButton.forEach((key,index) => key.addEventListener('click', ()=> {
-    deleteFunc(index);
-}))   
-}
-
-function deleteFunc (index) {
-myLib.splice(index,1);
-displayBook();
-}
-
-displayBook();
-addBtn.addEventListener('click', addBook);
+const bookStore = new Book()
+bookStore.displayBook();
+addBtn.addEventListener('click', bookStore.addBook);
