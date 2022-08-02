@@ -45,12 +45,12 @@ function displayBook (){
             </div>
     `; 
 }); 
-}
+
 let deleteButton = bookContainer.querySelectorAll('.remove');  
 deleteButton.forEach((key,index) => key.addEventListener('click', ()=> {
     deleteFunc(index);
 }))   
-
+}
 
 function deleteFunc (index) {
 myLib.splice(index,1);
