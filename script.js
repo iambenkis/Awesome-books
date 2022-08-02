@@ -10,7 +10,7 @@ let myLib = [];
 const saveMyLib = () => {
   const str = JSON.stringify(myLib);
   localStorage.setItem('myLib', str);
-}
+};
 
 // get from localStorage
 
@@ -20,7 +20,7 @@ const getMyLib = () => {
   if (!myLib) {
     myLib = [];
   }
-}
+};
 
 const displayBook = () => {
   getMyLib();
@@ -39,20 +39,20 @@ const displayBook = () => {
     myLib.splice(index, 1);
     saveMyLib();
     displayBook();
-  }
+  };
 
   const deleteButton = bookContainer.querySelectorAll('.remove');
   deleteButton.forEach((key, index) => key.addEventListener('click', () => {
     deleteFunc(index);
   }));
-}
+};
 
 function Book(title, author) {
   this.title = title;
   this.author = author;
 }
 
-Book.prototype.saveBook =  () =>{
+Book.prototype.saveBook = () => {
   const savedBook = {
     title: this.title,
     author: this.author,
@@ -62,7 +62,7 @@ Book.prototype.saveBook =  () =>{
   displayBook();
 };
 
-const  addBook = (e) => {
+const addBook = (e) => {
   e.preventDefault();
   const bookTitle = inTitle.value;
   const bookAuthor = inAuthor.value;
@@ -75,7 +75,7 @@ const  addBook = (e) => {
     myLib.push(insertBook);
     saveMyLib();
   }
-}
+};
 
 displayBook();
 addBtn.addEventListener('click', addBook);
