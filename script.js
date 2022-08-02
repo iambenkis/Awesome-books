@@ -22,4 +22,14 @@ Book.prototype.saveBook = function () {
     myLib.unshift(savedBook);
     displayBook ();
 }
- 
+    
+function addBook (e){
+    e.preventDefault();
+    let bookTitle = inTitle.value;
+    let bookAuthor = inAuthor.value;
+    bookContainer.innerHTML = '';
+    if(bookAuthor!== '' && bookTitle!== '') { 
+        let insertBook = new Book (bookTitle,bookAuthor);
+        insertBook.saveBook();
+    }
+    }
