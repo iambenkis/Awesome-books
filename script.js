@@ -4,4 +4,11 @@ let inAuthor = document.querySelector('#in-author');
 const bookContainer = document.querySelector('.books'); 
 let removeBtn =  document.querySelectorAll('.remove');
 
+
 let myLib = [];
+
+
+function Book (title,author) {
+    this.title = title;
+    this.author = author;
+}
