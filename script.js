@@ -7,14 +7,14 @@ let myLib = [];
 
 // save to localStorage
 
-function saveMyLib() {
+const saveMyLib = () => {
   const str = JSON.stringify(myLib);
   localStorage.setItem('myLib', str);
 }
 
 // get from localStorage
 
-function getMyLib() {
+const getMyLib = () => {
   const str = localStorage.getItem('myLib');
   myLib = JSON.parse(str);
   if (!myLib) {
@@ -22,7 +22,7 @@ function getMyLib() {
   }
 }
 
-function displayBook() {
+const displayBook = () => {
   getMyLib();
   bookContainer.innerHTML = '';
   myLib.forEach((s) => {
@@ -35,7 +35,7 @@ function displayBook() {
     `;
   });
 
-  function deleteFunc(index) {
+  const deleteFunc = (index) => {
     myLib.splice(index, 1);
     saveMyLib();
     displayBook();
@@ -52,7 +52,7 @@ function Book(title, author) {
   this.author = author;
 }
 
-Book.prototype.saveBook = function () {
+Book.prototype.saveBook =  () =>{
   const savedBook = {
     title: this.title,
     author: this.author,
@@ -62,7 +62,7 @@ Book.prototype.saveBook = function () {
   displayBook();
 };
 
-function addBook(e) {
+const  addBook = (e) => {
   e.preventDefault();
   const bookTitle = inTitle.value;
   const bookAuthor = inAuthor.value;
