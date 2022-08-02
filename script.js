@@ -8,20 +8,22 @@ let removeBtn =  document.querySelectorAll('.remove');
 let myLib = [];
 
 
-function Book (title,author) {
-    this.title = title;
-    this.author = author;
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+    saveBook() {
+        let savedBook = {
+            title: this.title,
+            author: this.author
+        };
+
+        myLib.unshift(savedBook);
+        displayBook();
+    }
 }
 
-Book.prototype.saveBook = function () {
-    let savedBook = {
-        title : this.title,
-        author :this.author
-    }
-    
-    myLib.unshift(savedBook);
-    displayBook ();
-}
     
 function addBook (e){
     e.preventDefault();
