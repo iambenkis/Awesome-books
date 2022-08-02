@@ -32,4 +32,30 @@ function addBook (e){
         let insertBook = new Book (bookTitle,bookAuthor);
         insertBook.saveBook();
     }
-    }
+}
+
+function displayBook (){ 
+    bookContainer.innerHTML = '';
+    myLib.forEach((s) => {
+    bookContainer.innerHTML += ` 
+            <div class="book-item">
+                <p class="title">${s.title}</p>
+                <p class="Autor">${s.author}</p>
+                <button class="remove">Remove</button>
+            </div>
+    `; 
+}); 
+}
+let deleteButton = bookContainer.querySelectorAll('.remove');  
+deleteButton.forEach((key,index) => key.addEventListener('click', ()=> {
+    deleteFunc(index);
+}))   
+
+
+function deleteFunc (index) {
+myLib.splice(index,1);
+displayBook();
+}
+
+displayBook();
+addBtn.addEventListener('click', addBook);
