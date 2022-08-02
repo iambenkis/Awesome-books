@@ -19,20 +19,18 @@
     align-items: center;  
  }
 
- .book-item { 
-    border-bottom: 1px solid #ddd;
-    margin-bottom: .5rem;
-    padding-bottom: .5rem;
+ .book-item {   
+    padding: .5rem 2rem; 
  }
 
  .books {
     background-color: #eee;
-    width: 300px;
+    width: 700px;
     height: 350px;
-    overflow-y: scroll;
-    padding: 1rem;
+    overflow-y: scroll; 
     -ms-overflow-style: none;  
-    scrollbar-width: none;  
+    scrollbar-width: none; 
+    border: 1px solid #333; 
  }
  
  .books::-webkit-scrollbar {
@@ -42,6 +40,16 @@
 
  .add-div {
     margin-top: 1.5rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .remove {
+   float: right;  
+   margin-top: -1.8rem
  }
 
  .delete {
@@ -51,5 +59,14 @@
  .remove {
    background-color: rgb(1, 1, 32);
    color: #fff;
-   padding: .2rem 2rem; 
+   padding: .2rem .1rem; 
+ }
+
+ .page-title {
+   text-align: center;
+ }
+
+ .book-item:nth-child(odd) {
+   background-color: #fff;
+   padding: .5rem 2rem;
  }

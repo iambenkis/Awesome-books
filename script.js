@@ -41,8 +41,7 @@ function displayBook (){
     myLib.forEach((s) => {
     bookContainer.innerHTML += ` 
             <div class="book-item">
-                <p class="title">${s.title}</p>
-                <p class="Autor">${s.author}</p>
+                <p class="title"> "${s.title}" by ${s.author}</p> 
                 <button class="remove">Remove</button>
             </div>
     `; 
