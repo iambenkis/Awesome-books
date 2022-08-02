@@ -36,8 +36,7 @@ function addBook (e){
         insertBook.saveBook();
         inAuthor.value = '';
         inTitle.value = '';
-    }
-    
+    } 
 }
 
 function displayBook (){ 
