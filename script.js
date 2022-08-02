@@ -74,6 +74,7 @@ const addBook = (e) => {
     inTitle.value = '';
     myLib.push(insertBook);
     saveMyLib();
+    window.location.reload();
   }
 };
 
