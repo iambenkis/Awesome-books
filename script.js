@@ -12,3 +12,14 @@ function Book (title,author) {
     this.title = title;
     this.author = author;
 }
+
+Book.prototype.saveBook = function () {
+    let savedBook = {
+        title : this.title,
+        author :this.author
+    }
+    
+    myLib.unshift(savedBook);
+    displayBook ();
+}
+ 
