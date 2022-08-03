@@ -63,22 +63,22 @@ class Book {
   }
 
    addBook = (e) => {
-    e.preventDefault();
-    const bookTitle = inTitle.value;
-    const bookAuthor = inAuthor.value;
+     e.preventDefault();
+     const bookTitle = inTitle.value;
+     const bookAuthor = inAuthor.value;
 
-    if (inTitle.value !== '' && inAuthor.value !== '') {
-      bookContainer.innerHTML = '';
-      const insertBook = new Book(bookTitle, bookAuthor);
+     if (inTitle.value !== '' && inAuthor.value !== '') {
+       bookContainer.innerHTML = '';
+       const insertBook = new Book(bookTitle, bookAuthor);
 
-      insertBook.saveBook();
-      inAuthor.value = '';
-      inTitle.value = '';
-      myLib.push(insertBook);
-      saveMyLib();
-      window.location.reload();
-    }
-  }
+       insertBook.saveBook();
+       inAuthor.value = '';
+       inTitle.value = '';
+       myLib.push(insertBook);
+       saveMyLib();
+       window.location.reload();
+     }
+   }
 }
 
 const bookStore = new Book();
