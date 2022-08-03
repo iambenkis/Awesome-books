@@ -1,25 +1,3 @@
-<<<<<<< HEAD
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
- }
-
- input {
-    display: block;
-    margin-bottom: .5rem;
-    width: 70%;
- }
-
- main { 
-    width: 100%;
-    height: 100vh;
-    display: flex; 
-    justify-content: center;
-    align-items: center;  
- }
-=======
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +18,6 @@ main {
   justify-content: center;
   align-items: center;
 }
->>>>>>> ac6282b2e012b6ebbf03145df90ad7c8ca2dda88
 
 .book-item {
   padding: 0.5rem 1.5rem;
@@ -53,71 +30,9 @@ main {
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  border: 3px solid #333;
+  border: 1px solid #333;
 }
 
-<<<<<<< HEAD
- .books {
-    background-color: #eee;
-    width: 700px;
-    height: 300px;
-    overflow-y: scroll; 
-    -ms-overflow-style: none;  
-    scrollbar-width: none; 
-    border: 1px solid #333; 
- }
- 
- .books::-webkit-scrollbar {
-    display: none;
-  }
-  
- .add-div {
-    margin-top: 1.5rem;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
-
- .add-div input {
-   width: 50%;
-   padding: .4rem .5rem;
-   border-radius: .5rem;
- }
-
- .add-div button {
-   width: 10%; 
-   padding: .4rem .5rem;
-   border-radius: .5rem; 
-   background-color: #999;
-   color: #fff;
- }
-
- .remove {
-   float: right;  
-   margin-top: -1.8rem
- }
-
- .delete {
-    display: none;
- }
-
- .remove {
-   background-color: rgb(1, 1, 32);
-   color: #fff;
-   padding: .2rem .1rem; 
- }
-
- .page-title {
-   text-align: center; 
- }
-
- .book-item:nth-child(odd) {
-   background-color: #fff;
-   padding: .5rem 1.5rem;
- }
-=======
 .books::-webkit-scrollbar {
   display: none;
 }
@@ -134,51 +49,34 @@ main {
 .add-div input {
   width: 50%;
   padding: 0.4rem 0.5rem;
-  border: 3px solid black;
-  margin: 8px;
+  border-radius: 0.5rem;
 }
 
 .add-div button {
   width: 10%;
   padding: 0.4rem 0.5rem;
-  background-color: #fff;
-  color: black;
-  border: 3px solid black;
-  box-shadow: rgba(0, 0, 0, 0.897) 2px 2px;
-  margin: 8px;
+  border-radius: 0.5rem;
+  background-color: #999;
+  color: #fff;
+}
+
+.remove {
+  float: right;
+  margin-top: -1.8rem;
+  background-color: rgb(1, 1, 32);
+  color: #fff;
+  padding: 0.2rem 0.1rem;
 }
 
 .delete {
   display: none;
 }
 
-.remove {
-  background-color: #fff;
-  color: black;
-  padding: 0.2rem 0.1rem;
-  border: 3px solid black;
-  float: right;
-  margin-top: -1.8rem;
-  box-shadow: rgba(0, 0, 0, 0.897) 2px 2px;
-}
-
 .page-title {
   text-align: center;
-  margin-bottom: 15px;
 }
 
-.book-item:nth-child(even) {
+.book-item:nth-child(odd) {
   background-color: #fff;
   padding: 0.5rem 1.5rem;
 }
-
-.line {
-  border: 2px solid black;
-  width: 250px;
-  height: 1px;
-  border-radius: 3px;
-  color: black;
-  background-color: black;
-  margin-bottom: 20px;
-}
->>>>>>> ac6282b2e012b6ebbf03145df90ad7c8ca2dda88
