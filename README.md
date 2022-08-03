@@ -2,7 +2,7 @@
 
 # Awesome books
  
-In this project, you will refactor the Awesome books application to use JavaScript classes.
+In this project, We build the Awesome books application by using JavaScript classes.
 
 ## Built With
 
