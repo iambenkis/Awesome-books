@@ -1,9 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
- Awesome books: refactor to use JavaScript classes.
-
+# Awesome books
+ 
+In this project, you will refactor the Awesome books application to use JavaScript classes.
 
 ## Built With
 
