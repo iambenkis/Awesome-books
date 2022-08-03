@@ -1,23 +1,23 @@
- * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
- }
+}
 
- input {
+input {
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     width: 70%;
- }
+}
 
- main { 
+main {
     width: 100%;
     height: 100vh;
-    display: flex; 
+    display: flex;
     justify-content: center;
-    align-items: center;  
- }
+    align-items: center;
+}
 
  .book-item {   
     padding: .5rem 1.5rem; 
@@ -35,10 +35,9 @@
  
  .books::-webkit-scrollbar {
     display: none;
-  }
-  
+}
 
- .add-div {
+.add-div {
     margin-top: 1.5rem;
     display: flex;
     width: 100%;
@@ -64,9 +63,9 @@
    margin:8px;
  }
 
- .delete {
+.delete {
     display: none;
- }
+}
 
  .remove {
    background-color:#fff;

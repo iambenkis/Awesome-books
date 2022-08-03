@@ -69,6 +69,7 @@ addBook(e){
   if (inTitle.value !== '' && inAuthor.value !== '') {
     bookContainer.innerHTML = '';
     let insertBook = new Book(bookTitle, bookAuthor);
+
     insertBook.saveBook();
     inAuthor.value = '';
     inTitle.value = '';
