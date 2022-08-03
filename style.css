@@ -18,12 +18,13 @@ input {
 }
 
 main {
-  width: 100%;
+  width: 70%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 15%;
 }
 
 .book-item {
@@ -33,15 +34,16 @@ main {
 .books {
   background-color: #eee;
   width: 700px;
-  height: 180px;
+  height: 300px;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   border: 3px solid #333;
+  margin-top: 1.5rem;
 }
 
 .library h2 {
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
 }
 
 .books::-webkit-scrollbar {
@@ -93,23 +95,32 @@ main {
 }
 
 nav {
-  position: sticky;
+  position: fixed;
   top: 20px;
   border: 2px solid black;
-  padding: 0.4rem;
-  margin-bottom: 10%;
-  margin-top: 0;
-  width: 100%;
+  padding: .4rem; 
+  margin: 0 10% 10% 10%;
+  width: 80%;
+  display: flex;
+  
 }
 
 nav ul {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
+  width: 35%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
 }
 
 nav ul li {
   list-style: none;
+  border-right: 3px solid #000;
+  padding-right: .2rem;
+}
+
+nav ul li:nth-child(3) { 
+  border-right: none; 
 }
 
 a {
@@ -118,10 +129,10 @@ a {
 }
 
 footer { 
-  position: sticky;
+  position: fixed;
   border: 2px solid black;
-  padding: 1%;
-  width: 100%;
+  padding: .4rem;
+  width: 80%;
   margin-bottom: 0; 
   bottom: 20px;
 }
@@ -142,8 +153,13 @@ footer {
   scrollbar-width: none;
 }
 
-.addBook h1{
-  margin-bottom: 2rem;
+.addBook h2{
+  margin: -3rem 0 2rem 0;
+}
+
+.add-div .add {
+  width: 7rem;
+  margin-top: 1rem;
 }
 
 .contact {
