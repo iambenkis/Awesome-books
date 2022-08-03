@@ -12,9 +12,23 @@
 <body>
     <main>
         <section class="container">
+
+            <nav>
+                <ul>
+                    <li>Awesome Books</li>
+                    <li class="link"><a href="#library">List</a></li>
+                    <li class="link" id="border"><a href="#addBook">Add new</a></li>
+                    <li class="link" id="border"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div id="library" class="disable library">
             <h2 class="page-title">All Awesome books</h2>
-            <div class="books"> 
-            </div>
+            <div class="books"></div>
+        </div>
+
+        <div id="addBook" class="disable addBook">
+
             <div class="add-div">
                 <div class="line"></div>
                 <h2>Add a new book</h2>
@@ -22,6 +36,23 @@
                 <input type="text" name="Author" id="in-author" placeholder="Author">
                 <button class="add" type="button">Add</button>
             </div>
+        </div>
+
+        <div id="contact" class="active contact">
+
+            <h1>Contact Information</h1>
+            <p>
+            Do you have any questions or you just want to say "Hello"?<br>
+            You can reach out to us!
+        </p>
+        <ul>
+            <li>Our e-mail: mail@mail.com</li>
+            <li>Our phone number:40015456</li>
+            <li>Our address:bbb0054</li>
+        </ul>
+        </div>
+
+        <footer>Copyright ...</footer>
         </section>
     </main>
     <script src="script.js"></script>
