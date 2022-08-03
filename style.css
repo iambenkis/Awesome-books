@@ -30,7 +30,7 @@
     overflow-y: scroll; 
     -ms-overflow-style: none;  
     scrollbar-width: none; 
-    border: 1px solid #333; 
+    border: 3px solid #333; 
  }
  
  .books::-webkit-scrollbar {
@@ -50,20 +50,18 @@
  .add-div input {
    width: 50%;
    padding: .4rem .5rem;
-   border-radius: .5rem;
+   border: 3px solid black;
+   margin:8px;
  }
 
  .add-div button {
    width: 10%; 
    padding: .4rem .5rem;
-   border-radius: .5rem; 
-   background-color: #999;
-   color: #fff;
- }
-
- .remove {
-   float: right;  
-   margin-top: -1.8rem
+   background-color: #fff;
+   color: black;
+   border: 3px solid black;
+   box-shadow: rgba(0, 0, 0, 0.897) 2px 2px;
+   margin:8px;
  }
 
  .delete {
@@ -71,16 +69,31 @@
  }
 
  .remove {
-   background-color: rgb(1, 1, 32);
-   color: #fff;
-   padding: .2rem .1rem; 
+   background-color:#fff;
+   color: black;
+   padding: .2rem .1rem;
+   border: 3px solid black;
+   float: right;  
+   margin-top: -1.8rem;
+   box-shadow: rgba(0, 0, 0, 0.897) 2px 2px;
  }
 
  .page-title {
-   text-align: center; 
+   text-align: center;
+   margin-bottom: 15px; 
  }
 
- .book-item:nth-child(odd) {
+ .book-item:nth-child(even) {
    background-color: #fff;
    padding: .5rem 1.5rem;
+ }
+
+ line{
+   border: 2px solid black;
+   width: 250px;
+   height: 1px;
+   border-radius: 3px;
+   color: black;
+   background-color:black;
+   margin-bottom: 20px;
  }

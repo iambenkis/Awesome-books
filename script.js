@@ -1,12 +1,26 @@
 const addBtn = document.querySelector('.add');
-let inTitle = document.querySelector('#in-title');
-let inAuthor = document.querySelector('#in-author');
-const bookContainer = document.querySelector('.books'); 
-let removeBtn =  document.querySelectorAll('.remove');
-
+const inTitle = document.querySelector('#in-title');
+const inAuthor = document.querySelector('#in-author');
+const bookContainer = document.querySelector('.books');
 
 let myLib = [];
 
+// save to localStorage
+
+const saveMyLib = () => {
+  const str = JSON.stringify(myLib);
+  localStorage.setItem('myLib', str);
+};
+
+// get from localStorage
+
+const getMyLib = () => {
+  const str = localStorage.getItem('myLib');
+  myLib = JSON.parse(str);
+  if (!myLib) {
+    myLib = [];
+  }
+};
 
 class Book {
     constructor(title = '', author = '') {
@@ -23,21 +37,8 @@ class Book {
         this.displayBook();
     }
 
-    addBook (e){
-        e.preventDefault();
-        let bookTitle = inTitle.value;
-        let bookAuthor = inAuthor.value;
-        
-        if(inAuthor.value !== '' && inTitle.value !== '') { 
-            bookContainer.innerHTML = '';
-            let insertBook = new Book (bookTitle,bookAuthor);
-            insertBook.saveBook();
-            inAuthor.value = '';
-            inTitle.value = '';
-        } 
-    }
-    
-    displayBook () { 
+    displayBook () {
+    getMyLib(); 
         bookContainer.innerHTML = '';
         myLib.forEach((s) => {
         bookContainer.innerHTML += ` 
@@ -56,9 +57,26 @@ class Book {
     
     deleteFunc (index) {
         myLib.splice(index,1);
+        saveMyLib();
         this.displayBook();
     }
-}
+
+addBook(e){
+  e.preventDefault();
+  let bookTitle = inTitle.value;
+  let bookAuthor = inAuthor.value;
+
+  if (inTitle.value !== '' && inAuthor.value !== '') {
+    bookContainer.innerHTML = '';
+    let insertBook = new Book(bookTitle, bookAuthor);
+    insertBook.saveBook();
+    inAuthor.value = '';
+    inTitle.value = '';
+    myLib.push(insertBook);
+    saveMyLib();
+    window.location.reload();
+  }
+}}
 
 const bookStore = new Book()
 bookStore.displayBook();
