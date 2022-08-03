@@ -22,61 +22,65 @@ const getMyLib = () => {
   }
 };
 
-const displayBook = () => {
-  getMyLib();
-  bookContainer.innerHTML = '';
-  myLib.forEach((s) => {
-    bookContainer.innerHTML += ` 
-            <div class="book-item">
-                <p class="title">${s.title}</p>
-                <p class="Author">${s.author}</p>
-                <button class="remove">Remove</button>
-            </div>
-    `;
-  });
+class Book {
+  constructor(title = '', author = '') {
+    this.title = title;
+    this.author = author;
+  }
 
-  const deleteFunc = (index) => {
+  saveBook() {
+    const savedBook = {
+      title: this.title,
+      author: this.author,
+    };
+
+    myLib.unshift(savedBook);
+    this.displayBook();
+  }
+
+  displayBook() {
+    getMyLib();
+    bookContainer.innerHTML = '';
+    myLib.forEach((s) => {
+      bookContainer.innerHTML += ` 
+                <div class="book-item">
+                    <p class="title"> "${s.title}" by ${s.author}</p> 
+                    <button class="remove">Remove</button>
+                </div>
+        `;
+    });
+
+    const deleteButton = bookContainer.querySelectorAll('.remove');
+    deleteButton.forEach((key, index) => key.addEventListener('click', () => {
+      this.deleteFunc(index);
+    }));
+  }
+
+  deleteFunc(index) {
     myLib.splice(index, 1);
     saveMyLib();
-    displayBook();
-  };
+    this.displayBook();
+  }
 
-  const deleteButton = bookContainer.querySelectorAll('.remove');
-  deleteButton.forEach((key, index) => key.addEventListener('click', () => {
-    deleteFunc(index);
-  }));
-};
+   addBook = (e) => {
+     e.preventDefault();
+     const bookTitle = inTitle.value;
+     const bookAuthor = inAuthor.value;
 
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
+     if (inTitle.value !== '' && inAuthor.value !== '') {
+       bookContainer.innerHTML = '';
+       const insertBook = new Book(bookTitle, bookAuthor);
+
+       insertBook.saveBook();
+       inAuthor.value = '';
+       inTitle.value = '';
+       myLib.push(insertBook);
+       saveMyLib();
+       window.location.reload();
+     }
+   }
 }
 
-Book.prototype.saveBook = () => {
-  const savedBook = {
-    title: this.title,
-    author: this.author,
-  };
-
-  myLib.unshift(savedBook);
-  displayBook();
-};
-
-const addBook = (e) => {
-  e.preventDefault();
-  const bookTitle = inTitle.value;
-  const bookAuthor = inAuthor.value;
-  if (inTitle.value !== '' && inAuthor.value !== '') {
-    bookContainer.innerHTML = '';
-    const insertBook = new Book(bookTitle, bookAuthor);
-    insertBook.saveBook();
-    inAuthor.value = '';
-    inTitle.value = '';
-    myLib.push(insertBook);
-    saveMyLib();
-    window.location.reload();
-  }
-};
-
-displayBook();
-addBtn.addEventListener('click', addBook);
+const bookStore = new Book();
+bookStore.displayBook();
+addBtn.addEventListener('click', bookStore.addBook);

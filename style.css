@@ -20,19 +20,17 @@ main {
 }
 
 .book-item {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .books {
   background-color: #eee;
-  width: 300px;
-  height: 350px;
+  width: 700px;
+  height: 320px;
   overflow-y: scroll;
-  padding: 1rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: 1px solid #333;
 }
 
 .books::-webkit-scrollbar {
@@ -41,14 +39,44 @@ main {
 
 .add-div {
   margin-top: 1.5rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-div input {
+  width: 50%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.add-div button {
+  width: 10%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #999;
+  color: #fff;
+}
+
+.remove {
+  float: right;
+  margin-top: -1.8rem;
+  background-color: rgb(1, 1, 32);
+  color: #fff;
+  padding: 0.2rem 0.1rem;
 }
 
 .delete {
   display: none;
 }
 
-.remove {
-  background-color: rgb(1, 1, 32);
-  color: #fff;
-  padding: 0.2rem 2rem;
+.page-title {
+  text-align: center;
+}
+
+.book-item:nth-child(odd) {
+  background-color: #fff;
+  padding: 0.5rem 1.5rem;
 }
