@@ -2,6 +2,8 @@ const addBtn = document.querySelector('.add');
 const inTitle = document.querySelector('#in-title');
 const inAuthor = document.querySelector('#in-author');
 const bookContainer = document.querySelector('.books');
+const links = document.querySelectorAll('.link');
+const slides = document.querySelectorAll('.slide');
 
 let myLib = [];
 
@@ -33,7 +35,6 @@ class Book {
       title: this.title,
       author: this.author,
     };
-
     myLib.unshift(savedBook);
     this.displayBook();
   }
@@ -62,25 +63,37 @@ class Book {
     this.displayBook();
   }
 
-   addBook = (e) => {
-     e.preventDefault();
-     const bookTitle = inTitle.value;
-     const bookAuthor = inAuthor.value;
-
-     if (inTitle.value !== '' && inAuthor.value !== '') {
-       bookContainer.innerHTML = '';
-       const insertBook = new Book(bookTitle, bookAuthor);
-
-       insertBook.saveBook();
-       inAuthor.value = '';
-       inTitle.value = '';
-       myLib.push(insertBook);
-       saveMyLib();
-       window.location.reload();
-     }
-   }
+  addBook = (e) => {
+    e.preventDefault();
+    const bookTitle = inTitle.value;
+    const bookAuthor = inAuthor.value;
+    if (inTitle.value !== '' && inAuthor.value !== '') {
+      bookContainer.innerHTML = '';
+      const insertBook = new Book(bookTitle, bookAuthor);
+      insertBook.saveBook();
+      inAuthor.value = '';
+      inTitle.value = '';
+      myLib.push(insertBook);
+      saveMyLib();
+      // window.location.reload();
+    }
+  }
 }
 
 const bookStore = new Book();
 bookStore.displayBook();
 addBtn.addEventListener('click', bookStore.addBook);
+
+links.forEach((link, id) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    slides.forEach((slide) => {
+      slide.classList.add('disable');
+    });
+    slides[id].classList.remove('disable');
+  });
+});
+
+const date = new Date();
+const printDate = document.querySelector('.date');
+printDate.innerHTML = date.toGMTString(); // Tue, 12 May 2020 23:50:21 GMT
