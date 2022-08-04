@@ -118,17 +118,17 @@ nav ul li {
   padding-right: 0.2rem;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 nav ul li a:hover {
   color: aqua;
 }
 
 nav ul li:nth-child(3) {
   border-right: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 footer {

@@ -75,7 +75,7 @@ class Book {
       inTitle.value = '';
       myLib.push(insertBook);
       saveMyLib();
-     // window.location.reload();
+      // window.location.reload();
     }
   }
 }
@@ -96,5 +96,4 @@ links.forEach((link, id) => {
 
 const date = new Date();
 const printDate = document.querySelector('.date');
-printDate.innerHTML = date.toGMTString()            // Tue, 12 May 2020 23:50:21 GMT
-console.log(date);
+printDate.innerHTML = date.toGMTString(); // Tue, 12 May 2020 23:50:21 GMT
