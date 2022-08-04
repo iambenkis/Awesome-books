@@ -118,6 +118,10 @@ nav ul li {
   padding-right: 0.2rem;
 }
 
+nav ul li a:hover {
+  color: aqua;
+}
+
 nav ul li:nth-child(3) {
   border-right: none;
 }
@@ -182,4 +186,11 @@ footer {
 
 .disable {
   display: none;
+}
+
+.date {
+  position: fixed;
+  top: 12%;
+  right: 10%;
+  font-weight: 500;
 }
