@@ -91,6 +91,9 @@ links.forEach((link, id) => {
       slide.classList.add('disable');
     });
     slides[id].classList.remove('disable');
+    if (id === 0) {
+      window.location.reload();
+  } 
   });
 });
 
