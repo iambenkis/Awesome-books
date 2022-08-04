@@ -6,9 +6,9 @@
 }
 
 .container {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 input {
@@ -43,7 +43,7 @@ main {
 }
 
 .library h2 {
-  padding-bottom: 0rem;
+  padding-bottom: 0;
 }
 
 .books::-webkit-scrollbar {
@@ -98,16 +98,15 @@ nav {
   position: fixed;
   top: 20px;
   border: 2px solid black;
-  padding: .4rem; 
+  padding: 0.4rem;
   margin: 0 10% 10% 10%;
   width: 80%;
   display: flex;
-  
 }
 
 nav ul {
   width: 35%;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
@@ -116,11 +115,11 @@ nav ul {
 nav ul li {
   list-style: none;
   border-right: 3px solid #000;
-  padding-right: .2rem;
+  padding-right: 0.2rem;
 }
 
-nav ul li:nth-child(3) { 
-  border-right: none; 
+nav ul li:nth-child(3) {
+  border-right: none;
 }
 
 a {
@@ -128,12 +127,12 @@ a {
   color: black;
 }
 
-footer { 
+footer {
   position: fixed;
   border: 2px solid black;
-  padding: .4rem;
+  padding: 0.4rem;
   width: 80%;
-  margin-bottom: 0; 
+  margin-bottom: 0;
   bottom: 20px;
 }
 
@@ -153,7 +152,7 @@ footer {
   scrollbar-width: none;
 }
 
-.addBook h2{
+.addBook h2 {
   margin: -3rem 0 2rem 0;
 }
 
@@ -184,4 +183,3 @@ footer {
 .disable {
   display: none;
 }
- 
