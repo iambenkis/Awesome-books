@@ -12,7 +12,7 @@ In this project, We build the Awesome books application by using JavaScript clas
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://iambenkis.github.io/Awesome-books/)
 
 
 ## Getting Started
