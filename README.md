@@ -25,22 +25,6 @@ To get a local copy up and running follow these simple example steps.
 * Got to the cloned folder in your prompt command using ```cd Awesome-books```
 * Run the code
 
-### Prerequisites
-
-HTML CSS JavaScript
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
 ## Authors
 
 👤 **Bnejamin Kisenge**
@@ -73,4 +57,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+The MIT License (MIT)
+
+Copyright (c) 2022
